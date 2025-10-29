@@ -10,8 +10,8 @@ metadata:
     Stop contact to creditors
   description: |-
     This interview helps someone in Minnesota write a Stop Contact to Creditors Letter.
-  tags:
-    - "MO-12-00-00-00"
+#  tags:
+#    - "MO-12-00-00-00"
   authors:
     - Gabriela Riveros
   original_form:
@@ -30,6 +30,9 @@ code: |
   AL_DEFAULT_STATE = "MN"
 ---
 code: |
+  AL_ORGANIZATION_TITLE = "LawHelpMN"
+---
+code: |
   github_repo_name =  'docassemble-StopContactToCreditors'
 ---
 code: |
@@ -42,6 +45,7 @@ objects:
   - users: ALPeopleList.using(ask_number=True,target_number=1)
   - other_parties: ALPeopleList.using(ask_number=True,target_number=1)
   - debt_collectors: ALPeopleList.using(ask_number=True,target_number=1)
+  - al_logo: DAStaticFile.using(filename="MNfavicon-96x96.png", alt_text="LawHelpMN") 
 ---
 sections:
   - review_stop_contact_to_creditors: Review your answers

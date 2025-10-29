@@ -1,6 +1,6 @@
 import os
 import sys
-from setuptools import setup, find_packages
+from setuptools import setup, find_namespace_packages
 from fnmatch import fnmatchcase
 from distutils.util import convert_path
 
@@ -50,12 +50,10 @@ setup(name='docassemble.StopContactToCreditors',
       long_description_content_type='text/markdown',
       author='Gabriela Riveros',
       author_email='griveros@su.suffolk.edu',
-      license='The MIT License',
+      license='MIT',
       url='https://courtformsonline.org',
-      packages=find_packages(),
-      namespace_packages=['docassemble'],
-      install_requires=['docassemble.ALAnyState>=0.1.0', 'docassemble.AssemblyLine>=2.28.1'],
+      packages=find_namespace_packages(),
+      install_requires=['docassemble.ALAnyState @ git+https://github.com/suffolklitlab/docassemble-alanystate.git@main', 'docassemble.AssemblyLine @ git+https://github.com/SuffolkLITLab/docassemble-AssemblyLine.git@main'],
       zip_safe=False,
       package_data=find_package_data(where='docassemble/StopContactToCreditors/', package='docassemble.StopContactToCreditors'),
      )
-
